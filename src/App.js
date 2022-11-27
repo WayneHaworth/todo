@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
 function App() {
 
@@ -24,7 +25,6 @@ function App() {
   const [newTodoDescription, setNewTodoDescription] = useState("");
 
   const handleTodoChange = (e) => { setNewTodo(e.target.value);}
-
   const handleTodoDescriptionChange = (e) => { setNewTodoDescription(e.target.value); }
 
   const addTodo = (e) => {
@@ -40,11 +40,10 @@ function App() {
     setTodos(newTodos);
   }
 
-
   return (
     <div className="App bg-[#eeecf4] h-screen flex place-content-center pt-10">
       <div className="flex h-fit flex-col">
-      <header className="md:min-w-[650px] flex flex-col m-4 bg-white rounded-lg px-4 py-3 place-content-between">
+      <header className="shadow md:min-w-[650px] flex flex-col m-4 bg-white rounded-lg px-4 py-3 place-content-between">
         <section className="h-30 flex flex-col gap-4 mb-4 pt-3">
           <input 
             type="text" 
@@ -80,9 +79,9 @@ function App() {
           </section>
         </div>
       </header>
-      <section className="m-4 bg-white rounded-lg px-4 py-3 ">
+      <section className="shadow m-4 bg-white rounded-lg px-4 py-3 ">
         {todos.map((todo, index) => (          
-          <div key={index} className="border-b-2 last:border-none border-slate-100 flex text-left p-4">
+          <div key={index} className="group border-b-2 last:border-none border-slate-100 flex text-left p-4">
             <div className="flex h-5 place-items-end">
               <input id="helper-radio" by="helper-radio-text" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
             </div>
@@ -90,16 +89,16 @@ function App() {
               <label className="font-medium text-gray-900 dark:text-gray-300">{todo.text}</label>
               <p id="helper-radio-text" className="text-xs font-normal text-gray-500 dark:text-gray-300">{todo.description}</p>
             </div>
-            <div className="flex ml-auto self-center">
+            <div className="flex ml-auto hidden self-center group-hover:block">
               <a
+                className="w-[30px] h-[30px] grid bg-slate-300 text-white rounded-full place-items-center hover:bg-red-500 hover:scale-125 transition-all duration-100"
                 onClick={deleteTodo}
                 href="#">
-                X
+                <RiDeleteBin2Fill value={{color: 'red'}}/>
               </a>
             </div>
           </div>
         ))}
-
       </section>      
     </div>
     </div>
