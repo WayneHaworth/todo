@@ -40,18 +40,26 @@ function App() {
     setTodos(newTodos);
   }
 
+  /*
+sunset: bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100
+space: bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r
+hyper: bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500
+
+
+*/
+
   return (
-    <div className="App bg-[#eeecf4] h-screen flex place-content-center pt-10">
+    <div className="App bg-[#F0F0F0] h-screen flex place-content-center pt-10">
       <div className="flex h-fit flex-col">
       
       <section className="shadow m-4 bg-white rounded-lg px-4 py-3 ">
         {todos.map((todo, index) => (          
           <div key={index} className="group border-b-2 last:border-none border-slate-100 flex text-left p-4">
             <div className="flex h-5 place-items-end">
-              <input id="helper-radio" by="helper-radio-text" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+              <input id="helper-radio" by="helper-radio-text" type="checkbox" value="" className="w-4 h-4 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
             </div>
             <div className="ml-4 text-md">
-              <label className="font-medium text-gray-900 dark:text-gray-300">{todo.text}</label>
+              <label className="text-md font-bold text-slate-700 dark:text-gray-300">{todo.text}</label>
               <p id="helper-radio-text" className="text-md font-normal text-gray-500 dark:text-gray-300">{todo.description}</p>
             </div>
             <div className="flex ml-auto hidden self-center group-hover:block">
@@ -92,10 +100,10 @@ function App() {
             </ul>
           </section>
           <section className="buttons flex flex-row gap-4 p-2 items-center">            
-            <a href="#" className="button cancelTodoButton p-2 px-4 rounded-lg border border-1 border-slate-400 text-slate-500">Cancel</a>
+            <a href="#" className="button cancelTodoButton p-1.5 px-4 rounded border border-1 border-slate-400 text-slate-500">Cancel</a>
             <a 
               href="#" 
-              className="addTodoButton bg-rose-500 text-white p-2 px-4 rounded-lg"
+              className="addTodoButton bg-indigo-500 text-white p-1.5 px-4 rounded"
               onClick={addTodo}
               >Add Task
             </a>
