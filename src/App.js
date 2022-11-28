@@ -59,7 +59,7 @@ hyper: bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500
               <input id="helper-radio" by="helper-radio-text" type="checkbox" value="" className="w-4 h-4 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
             </div>
             <div className="ml-4 text-md">
-              <label className="text-md font-bold text-slate-700 dark:text-gray-300">{todo.text}</label>
+              <label className="text-md font-semibold text-slate-800 dark:text-gray-300">{todo.text}</label>
               <p id="helper-radio-text" className="text-md font-normal text-gray-500 dark:text-gray-300">{todo.description}</p>
             </div>
             <div className="flex ml-auto hidden self-center group-hover:block">
